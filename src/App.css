@@ -14,18 +14,102 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: black;
+  height: 5vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 20px;
   color: white;
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.cartButton {
+  position: fixed;
+  top: 8px;
+  right: 20px;
+  background-color: black;
+  color: white;
+  border-color:#61dafb;
+  border-radius: 5px;
+  width: 4vw;
+  height: 25px;
+}
+
+.cartCount {
+  position: fixed;
+  top: 0px;
+  right: 5px;
+  color: #61dafb;
+}
+
+.title {
+  height: 20vh;
+  background-color: gray;
+  color: white;
+  font-size: 100px;
+  font-weight: bold;
+}
+
+.products {
+  margin-top: 40px;
+  font-size: 30px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.imageContainer {
+  height: 250px;
+  width: 250px;
+  margin: 20px;
+}
+
+.image {
+  transform-origin: center center;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  transition: ease-in 0.5s;
+  filter: brightness(100%);
+}
+
+.addButton {
+  background-color: #61dafb;
+  color: white;
+  border-color: transparent;
+}
+
+.viewCartButton {
+  margin-top: 40px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: tomato;
+  color: white;
+  border-color: transparent;
+  margin-bottom: 20px;
+}
+
+.footer {
+  background-color: #61dafb;
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
 }
 
 @keyframes App-logo-spin {
