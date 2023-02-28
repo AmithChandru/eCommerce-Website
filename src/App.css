@@ -41,6 +41,7 @@
   border-radius: 5px;
   width: 4vw;
   height: 25px;
+  cursor: pointer;
 }
 
 .cartCount {
@@ -90,6 +91,7 @@
   background-color: #61dafb;
   color: white;
   border-color: transparent;
+  cursor: pointer;
 }
 
 .viewCartButton {
@@ -100,6 +102,7 @@
   color: white;
   border-color: transparent;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 
 .footer {

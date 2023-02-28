@@ -1,8 +1,10 @@
+import { useContext } from 'react';
 import './Modal.css';
+import CartContext from './store/CartContext';
 
 const Modal = (props) => {
 
-  const cartElements = [
+  /* const cartElements = [
     {
       title: 'Colors',
       price: 100,
@@ -21,7 +23,10 @@ const Modal = (props) => {
       imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%203.png',
       quantity: 1,
     }
-  ]
+  ] */
+
+  const cartCtx = useContext(CartContext);
+  const cartElements = cartCtx.items;
 
   return (
     <div className="ModalContainer">
@@ -33,6 +38,7 @@ const Modal = (props) => {
         <span className='CartQuantity CartColumn'>QUANTITY</span>
       </div>
       {cartElements.map((item) => {
+        console.log(item);
         return (
           <div className='Items'>
             <span className='CartItem CartColumn'>
@@ -42,7 +48,7 @@ const Modal = (props) => {
             <span className='CartPrice CartColumn'>{item.price}</span>
             <span className='CartQuantity CartColumn'>
               <input type='text' value={`${item.quantity}`} />
-              <button>REMOVE</button>
+              <button onClick={() => cartCtx.removeItem(item.title)}>REMOVE</button>
             </span>
           </div>
         )
