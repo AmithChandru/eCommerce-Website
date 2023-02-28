@@ -75,6 +75,7 @@
   height: 250px;
   width: 250px;
   margin: 20px;
+  overflow: hidden;
 }
 
 .image {
@@ -83,7 +84,6 @@
   height: 100%;
   width: 100%;
   transition: ease-in 0.5s;
-  filter: brightness(100%);
 }
 
 .addButton {

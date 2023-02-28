@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import './App.css';
+import Modal from './components/Modal';
 
 function App() {
 
@@ -24,6 +26,11 @@ function App() {
       imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%204.png',
     }
   ]
+  const [showCart, setShowCart] = useState(false);
+  
+  const handleClick = () => {
+    setShowCart((state) => !state);
+  }
 
   return (
     <div className="App">
@@ -31,9 +38,10 @@ function App() {
         <span>HOME</span>
         <span style={{ margin: '0px 40px' }}>STORE</span>
         <span>ABOUT</span>
-        <button className='cartButton'>Cart</button>
+        <button className='cartButton' onClick={handleClick}>Cart</button>
         <span className='cartCount'>0</span>
       </header>
+      {showCart && <Modal handleClick={handleClick}/>}
       <div className='title'>
         The Generics
       </div>
