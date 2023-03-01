@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import CartContext from './store/CartContext';
 
-const ProductList = () => {
+const ProductList = (props) => {
 
   const productsArr = [
     {
@@ -47,6 +47,7 @@ const ProductList = () => {
           )
         })}
       </div>
+      <button className='viewCartButton' onClick={props.handleClick}>See the cart</button>
     </section>
   )
 }

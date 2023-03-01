@@ -4,27 +4,6 @@ import CartContext from './store/CartContext';
 
 const Modal = (props) => {
 
-  /* const cartElements = [
-    {
-      title: 'Colors',
-      price: 100,
-      imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%201.png',
-      quantity: 2,
-    },
-    {
-      title: 'Black and white Colors',
-      price: 50,
-      imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%202.png',
-      quantity: 3,
-    },
-    {
-      title: 'Yellow and Black Colors',
-      price: 70,
-      imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%203.png',
-      quantity: 1,
-    }
-  ] */
-
   const cartCtx = useContext(CartContext);
   const cartElements = cartCtx.items;
 
@@ -38,7 +17,6 @@ const Modal = (props) => {
         <span className='CartQuantity CartColumn'>QUANTITY</span>
       </div>
       {cartElements.map((item) => {
-        console.log(item);
         return (
           <div className='Items'>
             <span className='CartItem CartColumn'>
@@ -47,7 +25,7 @@ const Modal = (props) => {
             </span>
             <span className='CartPrice CartColumn'>{item.price}</span>
             <span className='CartQuantity CartColumn'>
-              <input type='text' value={`${item.quantity}`} />
+              <input type='text' value={`${item.amount}`} />
               <button onClick={() => cartCtx.removeItem(item.title)}>REMOVE</button>
             </span>
           </div>
@@ -55,7 +33,7 @@ const Modal = (props) => {
       })}
       <div className='CartTotal'>
         <span style={{marginRight: '10px', fontSize: '20px', fontWeight: '500'}}>Total</span>
-        <span style={{fontSize: '20px'}}>50</span>
+        <span style={{fontSize: '20px'}}>{cartCtx.total}</span>
       </div>
       <button className='PurchaseButton'>PURCHASE</button>
     </div>

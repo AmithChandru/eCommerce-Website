@@ -1,0 +1,20 @@
+.AboutContainer {
+  margin-top: 20px;
+  width: 900px;
+  align-self: center;
+}
+
+.ImageAbout {
+  float: left;
+  margin: 20px 50px;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+
+.text {
+  font-size: 17px;
+  margin: 20px;
+  color: #777;
+  text-align: justify;
+}

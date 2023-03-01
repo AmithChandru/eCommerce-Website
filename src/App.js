@@ -1,9 +1,11 @@
 import { useState } from 'react';
+import About from './components/About';
 import './App.css';
 import Header from './components/Header';
 import Modal from './components/Modal';
 import ProductList from './components/ProductList';
 import CartProvider from './components/store/CartProvider';
+import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
 
 function App() {
 
@@ -15,18 +17,23 @@ function App() {
 
   return (
     <CartProvider>
+    <BrowserRouter>
       <div className="App">
-        <Header handleClick={handleClick}/>
+        <Header handleClick={handleClick} />
         {showCart && <Modal handleClick={handleClick}/>}
         <div className='title'>
           The Generics
         </div>
-        <ProductList />
-        <button className='viewCartButton' onClick={handleClick}>See the cart</button>
+          <Routes>
+            <Route path='/' element={<ProductList handleClick={handleClick} />} />
+            <Route path='*' element={<ProductList handleClick={handleClick} />} />
+            <Route path='/About' element={<About />} />
+          </Routes>
         <div className='footer'>
           <span style={{fontWeight: 'bold', fontSize: '30px', marginLeft: '60px'}}>The Generics</span>
         </div>
       </div>
+        </BrowserRouter>
     </CartProvider>
   );
 }

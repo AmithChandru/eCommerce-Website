@@ -1,15 +1,31 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CartContext from "./CartContext";
 
 const CartProvider = (props) => {
 
   const [items, setItems] = useState([]);
+  const [total, setTotal] = useState(0);
+
+  useEffect(() => {
+    let temp = 0;
+    items.forEach((ele) => {
+      temp = temp + ele.amount * parseInt(ele.price);
+    })
+    setTotal(temp);
+  }, [items])
 
   const addItemHandler = (item) => {
-    setItems((state) => [
-      ...state,
-      item
-    ])
+    let newItems = [...items];
+    let temp = item, flag = true;
+    temp.amount = 1;
+    newItems.forEach((ele) => {
+      if (ele.title === item.title) {
+        ele.amount++;
+        flag = false;
+      }
+    })
+    flag && newItems.push(temp);
+    setItems(newItems);
   }
 
   const removeItemHandler = (id) => {
@@ -18,12 +34,12 @@ const CartProvider = (props) => {
     temp = temp.filter((ele) => {
       return ele.title !== id
     })
-    console.log(temp);
     setItems([...temp]);
   }
 
   const cartctx = {
     items: items,
+    total: total,
     addItem: addItemHandler,
     removeItem: removeItemHandler
   }
