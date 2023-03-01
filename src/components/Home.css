@@ -1,0 +1,27 @@
+.HomeContainer {
+  width: 900px;
+  margin-top: 30px;
+  align-self: center;
+}
+
+.Items {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.List {
+  display: flex;
+  border-bottom: 1px solid black;
+  padding: 10px;
+}
+
+.TicketsButton {
+  width: 20%;
+  background-color: #56ccf2;
+  color: white;
+  border: none;
+  padding: 7px;
+  border-radius: 5px;
+  font-weight: 700;
+}

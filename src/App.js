@@ -6,6 +6,7 @@ import Modal from './components/Modal';
 import ProductList from './components/ProductList';
 import CartProvider from './components/store/CartProvider';
 import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
+import Home from './components/Home';
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
             <Route path='/' element={<ProductList handleClick={handleClick} />} />
             <Route path='*' element={<ProductList handleClick={handleClick} />} />
             <Route path='/About' element={<About />} />
+            <Route path='/Home' element={<Home />} />
           </Routes>
         <div className='footer'>
           <span style={{fontWeight: 'bold', fontSize: '30px', marginLeft: '60px'}}>The Generics</span>

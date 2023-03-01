@@ -9,9 +9,15 @@ const Header = (props) => {
 
   return (
     <header className="App-header">
-      <NavLink to='/Home'><span>HOME</span></NavLink>
-      <NavLink to='/'><span style={{ margin: '0px 40px' }}>STORE</span></NavLink>
-      <NavLink to='/About'><span>ABOUT</span></NavLink>
+      <NavLink to='/Home'>
+        <span>HOME</span>
+      </NavLink>
+      <NavLink to='/'>
+        <span style={{ margin: '0px 40px' }}>STORE</span>
+      </NavLink>
+      <NavLink to='/About'>
+        <span>ABOUT</span>
+      </NavLink>
       <button className='cartButton' onClick={props.handleClick}>Cart</button>
       <span className='cartCount'>{items}</span>
     </header>
