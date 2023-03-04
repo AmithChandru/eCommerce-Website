@@ -1,0 +1,22 @@
+.contactUsContainer {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  align-self: center;
+  text-align: left;
+}
+
+.Labels {
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.SubmitButton {
+  width: 100px;
+  height: 30px;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  margin-top: 20px;
+}

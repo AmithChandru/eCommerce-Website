@@ -10,13 +10,16 @@ const Header = (props) => {
   return (
     <header className="App-header">
       <NavLink to='/Home'>
-        <span>HOME</span>
+        <span className="navigationHeaders">HOME</span>
       </NavLink>
       <NavLink to='/'>
-        <span style={{ margin: '0px 40px' }}>STORE</span>
+        <span className="navigationHeaders" style={{ margin: '0px 20px 0px 20px' }}>STORE</span>
       </NavLink>
       <NavLink to='/About'>
-        <span>ABOUT</span>
+        <span className="navigationHeaders" style={{ margin: '0px 20px 0px 0px' }}>ABOUT</span>
+      </NavLink>
+      <NavLink to='/Contact-us'>
+        <span className="navigationHeaders">CONTACT US</span>
       </NavLink>
       <button className='cartButton' onClick={props.handleClick}>Cart</button>
       <span className='cartCount'>{items}</span>
