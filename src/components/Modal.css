@@ -36,7 +36,7 @@
   font-weight: 500;
 }
 
-.Items {
+.cartItems {
   display: flex;
   flex-direction: row;
 }

@@ -18,7 +18,7 @@ const Modal = (props) => {
       </div>
       {cartElements.map((item) => {
         return (
-          <div className='Items'>
+          <div className='cartItems'>
             <span className='CartItem CartColumn'>
               <img className='CartImage' alt='Product' src={`${item.imageUrl}`} />
               <span>{item.title}</span>

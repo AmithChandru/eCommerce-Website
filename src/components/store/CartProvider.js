@@ -15,7 +15,27 @@ const CartProvider = (props) => {
     setTotal(temp);
   }, [items])
 
-  const addItemHandler = (item) => {
+  const addItemHandler = async (item) => {
+    let email = token.email.split('@').join('').split('.').join('');
+    await fetch(`https://crudcrud.com/api/9127cfc0ca3d49e5b284be5f2d445ee1/${email}`, {
+      method: 'POST',
+      body: item,
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': 'true',
+        'Access-Control-Allow-Methods': 'GET,HEAD,OPTIONS,POST,PUT',
+        'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+      }
+    }).then((res) => {
+      if (res.ok) {
+        res.json().then((data) => {
+          console.log(data)
+        })
+      } else {
+        console.log(res);
+      }
+    })
     let newItems = [...items];
     let temp = item, flag = true;
     temp.amount = 1;

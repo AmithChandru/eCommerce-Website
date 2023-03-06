@@ -31,8 +31,8 @@ function App() {
             The Generics
           </div>
           <Routes>
-            {console.log(cartCtx.token)}
-            {cartCtx.token && <Route path='/' element={<ProductList handleClick={handleClick} />} />}
+            {/* {cartCtx.token && <Route path='/' element={<ProductList handleClick={handleClick} />} />} */}
+            <Route path='/' element={<ProductList handleClick={handleClick} />} />
             <Route path='*' element={<Login />} />
             <Route path='/About' element={<About />} />
             <Route path='/Home' element={<Home />} />
