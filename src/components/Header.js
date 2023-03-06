@@ -21,9 +21,12 @@ const Header = (props) => {
       <NavLink to='/Contact-us'>
         <span className="navigationHeaders" style={{ margin: '0px 20px 0px 0px' }}>CONTACT US</span>
       </NavLink>
-      <NavLink to='/login'>
+      {!cartCtx.token && <NavLink to='/login'>
         <span className="navigationHeaders">LOGIN</span>
-      </NavLink>
+      </NavLink>}
+      {cartCtx.token && <NavLink to='/login'>
+        <span className="navigationHeaders" onClick={() => cartCtx.removeToken()}>LOGOUT</span>
+      </NavLink>}
       <button className='cartButton' onClick={props.handleClick}>Cart</button>
       <span className='cartCount'>{items}</span>
     </header>

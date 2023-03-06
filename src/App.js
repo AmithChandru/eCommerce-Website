@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import About from './components/About';
 import './App.css';
 import Header from './components/Header';
@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
 import ContactUs from './components/ContactUs';
 import Login from './components/Login';
+import CartContext from './components/store/CartContext';
 
 function App() {
 
@@ -17,6 +18,8 @@ function App() {
   const handleClick = () => {
     setShowCart((state) => !state);
   }
+
+  const cartCtx = useContext(CartContext);
 
   return (
     <CartProvider>
@@ -28,8 +31,9 @@ function App() {
             The Generics
           </div>
           <Routes>
-            <Route path='/' element={<ProductList handleClick={handleClick} />} />
-            <Route path='*' element={<ProductList handleClick={handleClick} />} />
+            {console.log(cartCtx.token)}
+            {cartCtx.token && <Route path='/' element={<ProductList handleClick={handleClick} />} />}
+            <Route path='*' element={<Login />} />
             <Route path='/About' element={<About />} />
             <Route path='/Home' element={<Home />} />
             <Route path='/Contact-us' element={<ContactUs />} />
