@@ -4,6 +4,7 @@ import CartContext from "./CartContext";
 const CartProvider = (props) => {
 
   const [items, setItems] = useState([]);
+  const [token, setToken] = useState(null);
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
@@ -37,11 +38,24 @@ const CartProvider = (props) => {
     setItems([...temp]);
   }
 
+  const addToken = (item) => {
+    setToken(item);
+    localStorage.setItem('userDetails', item);
+  }
+
+  const removeToken = () => {
+    setToken(null);
+    localStorage.removeItem('userDetails');
+  }
+
   const cartctx = {
     items: items,
     total: total,
     addItem: addItemHandler,
-    removeItem: removeItemHandler
+    removeItem: removeItemHandler,
+    token: token,
+    addToken: addToken,
+    removeToken: removeToken
   }
 
   return (

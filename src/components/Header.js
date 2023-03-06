@@ -19,7 +19,10 @@ const Header = (props) => {
         <span className="navigationHeaders" style={{ margin: '0px 20px 0px 0px' }}>ABOUT</span>
       </NavLink>
       <NavLink to='/Contact-us'>
-        <span className="navigationHeaders">CONTACT US</span>
+        <span className="navigationHeaders" style={{ margin: '0px 20px 0px 0px' }}>CONTACT US</span>
+      </NavLink>
+      <NavLink to='/login'>
+        <span className="navigationHeaders">LOGIN</span>
       </NavLink>
       <button className='cartButton' onClick={props.handleClick}>Cart</button>
       <span className='cartCount'>{items}</span>

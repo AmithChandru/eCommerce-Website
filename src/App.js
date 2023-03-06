@@ -8,6 +8,7 @@ import CartProvider from './components/store/CartProvider';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
 import ContactUs from './components/ContactUs';
+import Login from './components/Login';
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
             <Route path='/About' element={<About />} />
             <Route path='/Home' element={<Home />} />
             <Route path='/Contact-us' element={<ContactUs />} />
+            <Route path='/login' element={<Login />} />
           </Routes>
           <div className='footer'>
             <span style={{ fontWeight: 'bold', fontSize: '30px', marginLeft: '60px' }}>The Generics</span>
